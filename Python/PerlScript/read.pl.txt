@@ -1,0 +1,18 @@
+my $filename='file1.txt';
+open(my $fh,'<:encoding(UTF-8)', $filename)
+	or die"cannot open the file";
+while(my $row = <$fh>)
+{
+	
+	print($row,"\n");  
+	@words=split /\s+/, $row;
+	foreach $word(@words)
+	{
+		$count{$word}++;
+	}
+	
+}
+foreach $word(sort keys %count)  
+{ 
+    	print($word, " ",$count{$word},"\n"); 
+} 

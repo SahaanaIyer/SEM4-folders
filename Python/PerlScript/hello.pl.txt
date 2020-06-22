@@ -1,0 +1,20 @@
+#this is a sample rogram to take input from the user n store it in a hash
+sub print_info
+{
+	my(%hash_var)=@_;
+	foreach my $key (keys %hash_var)
+	{
+		my $val=$hash_var{$key};
+		print($key,":",$val,"\n");
+	}
+		
+}
+print("Enter your name\n");
+$name=<STDIN>;
+print("enter your age\n");
+$age=<STDIN>;
+%hash=(
+	name=>$name,
+	age=>$age
+	);
+print_info(%hash);
